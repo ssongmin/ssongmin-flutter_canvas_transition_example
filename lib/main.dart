@@ -36,6 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ElevatedButton(
             onPressed: () {
@@ -56,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => PainterShowPage(
-                    customProgressPainter: ScaleTextMaskTransitionPainter(progress: 0, text: 'Test123456'),
+                    customProgressPainter: ScaleTextMaskTransitionPainter(progress: 0, text: '12'),
                   ),
                 ),
               );
