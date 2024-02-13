@@ -1,16 +1,6 @@
 # flutter_canvas_transition_example
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+|Name|Gif|
+|:---|:---|
+|BlindTransition|<img src ="https://github.com/ssongmin/ssongmin-flutter_canvas_transition_example/assets/16676116/cbbd6a0f-8d2b-4dad-8d1e-f93f9e1942e0" style="width:300px">|
+|ScaleTextMaskTransition|<img src ="https://github.com/ssongmin/ssongmin-flutter_canvas_transition_example/assets/16676116/ae179ce4-2cd8-46f8-b60d-fbfc74a096d0" style="width:300px">|
