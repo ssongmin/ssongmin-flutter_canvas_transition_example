@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_canvas_transition_example/painter/blind_transition_painter.dart';
 import 'package:flutter_canvas_transition_example/painter/scale_text_mask_transition_painter.dart';
+import 'package:flutter_canvas_transition_example/painter/text_move_transition_painter.dart';
 import 'package:flutter_canvas_transition_example/painter_show_page.dart';
 
 void main() {
@@ -63,6 +64,19 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
             child: const Text("ScaleTextMaskTransitionPainter"),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PainterShowPage(
+                    customProgressPainter: TextMoveTransitionPainter(progress: 0, text: 'Test123456'),
+                  ),
+                ),
+              );
+            },
+            child: const Text("TextMoveTransitionPainter"),
           ),
         ],
       ),
