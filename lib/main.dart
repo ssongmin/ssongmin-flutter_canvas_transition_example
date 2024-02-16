@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_canvas_transition_example/painter/blind_transition_painter.dart';
+import 'package:flutter_canvas_transition_example/painter/custom_progress_painter.dart';
+import 'package:flutter_canvas_transition_example/painter/pass_screen_transition_painter.dart';
 import 'package:flutter_canvas_transition_example/painter/scale_text_mask_transition_painter.dart';
 import 'package:flutter_canvas_transition_example/painter/text_move_transition_painter.dart';
 import 'package:flutter_canvas_transition_example/painter_show_page.dart';
@@ -39,47 +41,28 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => PainterShowPage(
-                    customProgressPainter: BlindTransitionPainter(progress: 0, text: 'Test123456'),
-                  ),
-                ),
-              );
-            },
-            child: const Text("BlindTransitionPainter"),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => PainterShowPage(
-                    customProgressPainter: ScaleTextMaskTransitionPainter(progress: 0, text: '12'),
-                  ),
-                ),
-              );
-            },
-            child: const Text("ScaleTextMaskTransitionPainter"),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => PainterShowPage(
-                    customProgressPainter: TextMoveTransitionPainter(progress: 0, text: 'Test123456'),
-                  ),
-                ),
-              );
-            },
-            child: const Text("TextMoveTransitionPainter"),
-          ),
+          painterButton(customProgressPainter: BlindTransitionPainter(progress: 0, text: 'Test123456')),
+          painterButton(customProgressPainter: ScaleTextMaskTransitionPainter(progress: 0, text: '12')),
+          painterButton(customProgressPainter: TextMoveTransitionPainter(progress: 0, text: 'Test123456')),
+          painterButton(customProgressPainter: PassScreenTransitionPainter(progress: 0, text: 'Test123456')),
         ],
       ),
+    );
+  }
+
+  Widget painterButton({required CustomProgressPainter customProgressPainter}) {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PainterShowPage(
+              customProgressPainter: customProgressPainter,
+            ),
+          ),
+        );
+      },
+      child: Text(customProgressPainter.title),
     );
   }
 }
