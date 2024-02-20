@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_canvas_transition_example/painter/blind_transition_painter.dart';
 import 'package:flutter_canvas_transition_example/painter/custom_progress_painter.dart';
+import 'package:flutter_canvas_transition_example/painter/overlap_text_move_transition_painter.dart';
 import 'package:flutter_canvas_transition_example/painter/pass_screen_transition_painter.dart';
 import 'package:flutter_canvas_transition_example/painter/scale_text_mask_transition_painter.dart';
 import 'package:flutter_canvas_transition_example/painter/section_move_transition_painter.dart';
@@ -47,6 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
           painterButton(customProgressPainter: TextMoveTransitionPainter(progress: 0, text: 'Test123456')),
           painterButton(customProgressPainter: PassScreenTransitionPainter(progress: 0, text: 'Test123456')),
           painterButton(customProgressPainter: SectionMoveTransitionPainter(progress: 0, text: 'Test123456')),
+          painterButton(customProgressPainter: OverlapTextMoveTransitionPainter(progress: 0, text: 'Test123456')),
         ],
       ),
     );
